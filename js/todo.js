@@ -44,6 +44,4 @@ class Todo extends Akili.Component {
 Akili.component('todo', Todo);
 
 // Initialize the application
-document.addEventListener('DOMContentLoaded', () => {
-  Akili.init();
-});
+document.addEventListener('DOMContentLoaded', () => Akili.init());

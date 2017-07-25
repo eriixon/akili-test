@@ -8,7 +8,18 @@ class Hello extends Akili.Component {
 // Register the component
 Akili.component('hello', Hello);
 
+
+
+class MySecondComponent extends Hello  {
+ constructor(...args) {
+    super(...args);
+    this.scope.example = 'Goodbye World';
+  }
+  myOwnMethod() {}
+}
+
+Akili.component('my-second-component', MySecondComponent)
+
+
 // Initialize the application
-document.addEventListener('DOMContentLoaded', () => {
-  Akili.init();
-})
+document.addEventListener('DOMContentLoaded', () => Akili.init())
