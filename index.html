@@ -46,8 +46,42 @@
       </form>
     </todo>
 
+    <!--Maths component-->
+    <maths>
+      <h3 class="text-muted mt-3 text-center">Maths example</h3>
+      <table class="table text-center mt-3">
+        <thead>
+          <tr>
+            <th class="text-center">a</th>
+            <th class="text-center">b</th>
+            <th class="text-center">a + b</th>
+            <th class="text-center">a - b</th>
+          </tr>
+        </thead>
+        <tbody in="${this.values}">
+          <tr>
+            <td>${ this.loopValue.a }</td>
+            <td>${ this.loopValue.b }</td>
+            <td>${ this.loopValue.a + this.loopValue.b }</td>
+            <td>${ this.loopValue.a - this.loopValue.b }</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-block w-75 mt-4 mx-auto">
+        <!--Show if we click on start-->
+        <if is="${ this.isStarted }">
+          <button on-click="${ this.end() }" class="btn btn-danger w-100" style="cursor: pointer">Stop</button>
+        </if>
+        <!--Show if we didn't click on start-->
+        <else>
+          <button on-click="${ this.start() }" class="btn btn-success w-100" style="cursor: pointer">Start</button></else>
+      </div>
+    </maths>
+    <!-- Math Component End-->
+
     <script src="http://akilijs.com/js/libs/akili.min.js"></script>
-    <script src="hello.js"></script>
-    <script src="todo.js"></script>
+    <script src="js/hello.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/math.js"></script>
 </body>
 </html>
